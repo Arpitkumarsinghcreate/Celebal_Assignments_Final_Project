@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arpit Kumar Singh Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    /* Font updates for better readability and match sample */
+h1 {
+  font-size: 42px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+h3 {
+  font-size: 28px;
+  font-weight: 600;
+}
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+p, li, a, button, input, textarea {
+  font-size: 18px;
+  line-height: 1.7;
+}
+.nav-link {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+.contact-left p,
+.footer-note {
+  font-size: 16px;
+}
+
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: white;
+    }
+    header, footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: #f50057;
+    }
+    .hero {
+      padding: 5rem 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero img {
+  max-width: 1000px; /* increased from 300px */
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+
+    .hero h1 span {
+      color: #f50057;
+    }
+    .section {
+      padding: 4rem 2rem;
+    }
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      height: 300px;
+      color: white;
+      padding: 2rem;
+      background-size: cover;
+      background-position: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      background-color: rgba(245, 0, 87, 0.7);
+      z-index: 10;
+    }
+    .project-overlay {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .experience-card {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  transition: transform 0.4s ease;
+}
+
+.experience-card:hover {
+  transform: scale(1.05);
+}
+
+.experience-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: linear-gradient(to top, #f50057, rgba(0, 0, 0, 0));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  transition: top 0.4s ease-in-out;
+}
+
+.experience-card:hover .experience-overlay {
+  top: 0;
+}
+
+.experience-icon {
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.experience-icon i {
+  color: #f50057;
+}
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .contact-left {
+      flex: 1;
+    }
+    .contact-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-right input,
+    .contact-right textarea {
+      background-color: #222;
+      border: none;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      color: white;
+    }
+    .contact-right button {
+      background-color: #f50057;
+      color: white;
+      border: none;
+      padding: 1rem;
+    }
+    .social-icons a {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      color: white;
+    }
+    .social-icons a:hover {
+      color: #f50057;
+    }
+    .footer-note {
+      margin-top: 2rem;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .contact {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h2>Portfolio</h2>
+      <div>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+    <div class="hero">
+      <div>
+        <p>Coder and Developer</p>
+        <h1>Hi, I'm <span>Arpit</span><br>I'm a student</h1>
+      </div>
+      <img src="assets\WhatsApp_Image_2025-07-23_at_11.21.51_896d74dd-removebg-preview (1).png" alt="Profile Picture" />
+    </div>
+  </header>
+
+<section id="about" class="section container">
+  <h2 class="text-center mb-4">About Me</h2>
+  <p class="text-center mb-5">
+    A third-year Computer Science Engineering student with a strong foundation in front-end technologies. Skilled in
+    building responsive and user-friendly web applications. Basic understanding of back-end technologies. Passionate
+    about solving complex problems using data structures and algorithms (DSA), and enthusiastic about participating
+    in hackathons and collaborative projects. Excellent verbal and written communication skills, with keen attention
+    to detail and strong problem-solving abilities.
+  </p>
+
+  <div class="row align-items-start">
+    <div class="col-md-4 text-center mb-4 mb-md-0">
+      <img src="assets\WhatsApp Image 2025-07-23 at 11,55,59_989d1f1e-Picsart-AiImageEnhancer.jpg" alt="Arpit Profile" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
+    </div>
+    <div class="col-md-8">
+      <ul class="nav nav-pills mb-3 justify-content-start" id="aboutTabs" role="tablist">
+        <li class="nav-item me-2" role="presentation">
+          <button class="nav-link active" id="skills-tab" data-bs-toggle="pill" data-bs-target="#skills" type="button" role="tab">Skills</button>
+        </li>
+        <li class="nav-item me-2" role="presentation">
+          <button class="nav-link" id="experience-tab" data-bs-toggle="pill" data-bs-target="#experience" type="button" role="tab">Experience</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="education-tab" data-bs-toggle="pill" data-bs-target="#education" type="button" role="tab">Education</button>
+        </li>
+      </ul>
+      <div class="tab-content p-3 bg-dark rounded" id="aboutTabsContent">
+        <div class="tab-pane fade show active" id="skills" role="tabpanel">
+          <h4 class="text-uppercase border-bottom border-danger pb-1 mb-3">Skills</h4>
+          <ul class="list-unstyled">
+            <li><strong>Languages:</strong> C, C++, Python, Java, HTML, CSS, JavaScript, SQL</li>
+            <li><strong>Frameworks & Tools:</strong> ReactJS, NodeJS, MongoDB, Git, Linux, VS Code, REST API</li>
+            <li><strong>Web Development:</strong> HTML, CSS, JS, React for dynamic UIs</li>
+            <li><strong>Database:</strong> SQL, MongoDB – Design & manage data efficiently</li>
+            <li><strong>Problem Solving:</strong> DSA in C++, Java with competitive programming</li>
+          </ul>
+        </div>
+        <div class="tab-pane fade" id="experience" role="tabpanel">
+          <h4 class="text-uppercase border-bottom border-danger pb-1 mb-3">Experience</h4>
+          <p><strong>Celebal Technologies – App Modernization Intern</strong><br>
+          Developed attractive features and contributed to front-end development using modern technologies.</p>
+        </div>
+        <div class="tab-pane fade" id="education" role="tabpanel">
+          <h4 class="text-uppercase border-bottom border-danger pb-1 mb-3">Education</h4>
+          <p><strong>Galgotias University (2021 - Present)</strong><br>
+          B.Tech in Computer Science Engineering – Current CGPA: 7.53</p>
+          <p><strong>Intermediate – PCM (2021)</strong><br>
+          A.N.S College Nabinagar, Aurangabad, Bihar – 77.6%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="project-card" style="background-image: url('assets\35595195-daily-news-title-on-newspaper.jpg');">
+          <div class="project-overlay">
+            <h3>Alpha News</h3>
+            <p>Real-time news platform built with React.js and News API.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card" style="background-image: url('images/weather.png');">
+          <div class="project-overlay">
+            <h3>Weather App</h3>
+            <p>Weather forecasting app using Weather API and JavaScript.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section text-center">
+    <h2>My Work Experience</h2>
+    <a href="https://celebaltech.com/" target="_blank" style="text-decoration: none;">
+  <div class="experience-card" style="background-image: url('https://i.postimg.cc/8C2HNx54/585afcea-197a-425c-aabe-c23df12703b9.jpg');">
+    <div class="experience-overlay">
+      <h4>Celebal Technologies</h4>
+      <p>Worked as an App Modernization Intern</p>
+      <div class="experience-icon">
+        <i class="bi bi-link-45deg"></i>
+      </div>
+    </div>
+  </div>
+</a>
+
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <div class="contact">
+      <div class="contact-left">
+        <p><i class="bi bi-send"></i> arpitgaikwad7766@gmail.com</p>
+        <p><i class="bi bi-telephone"></i> +91-8521806658</p>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/arpit-singh-488aa5283"><i class="bi bi-linkedin"></i></a>
+          <a href="https://github.com/Arpitkumarsinghcreate"><i class="bi bi-github"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+        </div>
+        <br>
+        <a class="btn btn-danger" href="resume/RESUME_ARPIT.pdf" download>Download CV</a>
+      </div>
+      <div class="contact-right">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+    <p class="footer-note">copyright &copy; Arpit. Made with love ❤️</p>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
